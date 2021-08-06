@@ -1,7 +1,5 @@
 <template>
     <div>
-        <p>Completed Tasks: {{ todos.filter(todo => todo.done === true).length }} </p>
-        <p>Pending Tasks: {{ todos.filter(todo => todo.done === false).length }} </p>
         <todo-item v-for="(todo, index) in todos" :key="index" :todo="todo" @delete-todo="deleteTodo(todo)" @complete-todo='completeTodo(todo)'></todo-item>
         <add-new-todo v-on:create-todo='addTodo'></add-new-todo>
     </div>
