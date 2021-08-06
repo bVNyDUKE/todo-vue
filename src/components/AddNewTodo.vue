@@ -1,7 +1,8 @@
 <template>
     <div class='ui basic content center aligned segment'>
         <button class='ui basic button icon' v-on:click="toggleForm">
-            <i class='plus icon'></i>
+            <i v-show='!isCreating' class='plus icon'></i>
+            <i v-show='isCreating' class='minus icon'></i>
         </button>
         <div class='ui centered card' v-show="isCreating">
             <div class='content'>
@@ -14,11 +15,11 @@
                         <label>Project</label>
                         <input type='text' v-model="projectText" ref='project' defaultValue=''>
                     </div>
-                    <div class='ui two button attached buttons'>
-                        <button class='ui basic blue button' v-on:click="sendForm">
+                    <div class='ui buttons'>
+                        <button class='ui blue button' v-on:click="sendForm">
                             Create
                         </button>
-                        <button class='ui basic red button' v-on:click="toggleForm">
+                        <button class='ui red button' v-on:click="toggleForm">
                             Cancel
                         </button>
                     </div>
