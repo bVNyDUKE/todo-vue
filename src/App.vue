@@ -45,4 +45,8 @@ export default {
 #app{
   margin-top: 50px;
 }
+.todo-list{
+  background-color: black;
+}
+
 </style>
